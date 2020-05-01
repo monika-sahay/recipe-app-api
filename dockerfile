@@ -7,5 +7,6 @@ RUN mkdir /app
 WORKDIR /app
 COPY ./app/ /app
 RUN chown -R $user:$user app/
+RUN export UID=${UID} && export GID=${GID}
 RUN adduser -D user
 USER user
